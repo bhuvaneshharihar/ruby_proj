@@ -1,0 +1,28 @@
+<h1>Add a new Product</h1>
+
+<%= form_with model: @product, local:true do |form| %>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </p>
+
+    <p>
+        <%= form.label :size %><br>
+        <%= form.text_field :size %>
+    </p>
+
+    <p>
+        <%= form.label :price %><br>
+        <%= form.text_field :price, step: 0.01 %>
+    </p>
+
+    <p>
+        <%= form.label :category_id, "Category" %><br>
+        <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select a category" %>
+    </p>
+
+    <p>
+        <%= form.submit "Create Product" %>
+    </p>
+
+<% end %>
