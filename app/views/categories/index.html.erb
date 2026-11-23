@@ -1,0 +1,13 @@
+<h1> All Categories </h1>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Name</th>
+    <tr>
+
+    <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.name %></td>
+        </tr>
+    <% end %>
+</table>
